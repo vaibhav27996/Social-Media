@@ -1,0 +1,29 @@
+[33mcommit d5c16b279cccfda7e8a25561ad87a89461342506[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: vaibhav27996 <vmahajan27996@gmail.com>
+Date:   Mon Dec 19 19:08:31 2022 +0530
+
+    Created signup and signin pages
+
+[33mcommit 7c5914c5098b2129461a2b8613786b5b3854b3d7[m
+Author: vaibhav27996 <vmahajan27996@gmail.com>
+Date:   Sun Dec 18 17:29:03 2022 +0530
+
+    setup static file access layout my project
+
+[33mcommit 65b6101e06ec8704d4e4664dc242b50a362495c1[m
+Author: vaibhav27996 <vmahajan27996@gmail.com>
+Date:   Fri Dec 16 18:23:53 2022 +0530
+
+    setup the view engine
+
+[33mcommit 7ee9dfdea3aa8867efa8ab945afe3395c6fc1973[m
+Author: vaibhav27996 <vmahajan27996@gmail.com>
+Date:   Fri Dec 16 16:39:15 2022 +0530
+
+    add controller and router for home
+
+[33mcommit b60a13c328534940b85c9b4ce4d0c3d940605029[m
+Author: vaibhav27996 <vmahajan27996@gmail.com>
+Date:   Fri Dec 16 15:04:34 2022 +0530
+
+    first commit :create the directory structure and setup express server
