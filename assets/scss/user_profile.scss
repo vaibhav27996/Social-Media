@@ -1,3 +1,28 @@
-body{
-    background-color: lightblue;
+.card{
+    width: 30%;
+    height: 30vh;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-top-right-radius: 27px;
+    border-top-left-radius: 27px;
+
+    .card-header{
+        background-color: #4d8f82;
+        color: white;
+        border-top-right-radius: 27px;
+        border-top-left-radius: 27px;
+        text-align: center;
+    }
+
+    .card-body{
+        color: #455789;
+        font-size: 17px;
+        font-weight: 700;
+        
+        
+        span{
+            font-size: 15px;
+            color: brown;
+        }
+    }
 }

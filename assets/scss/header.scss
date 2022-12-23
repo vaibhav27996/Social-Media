@@ -1,0 +1,27 @@
+.navbar{
+    
+    background-color: #0b7c72 !important;
+
+    img{
+        width: 63px;
+        height: 3rem;
+        margin-left: 15px;
+        border-radius: 11px;
+    }
+    .navbar-brand{
+        color: white;
+        font-weight: 700;
+        font-size: 20px;
+        padding-left: 13px;
+
+       
+    }
+}
+
+.links-right{
+    justify-content: end;
+
+    li a{
+        color: white;
+    }
+}

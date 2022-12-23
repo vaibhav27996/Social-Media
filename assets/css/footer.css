@@ -1,0 +1,15 @@
+.page-footer {
+  background-color: #87a3a3; }
+  .page-footer .flex-center {
+    background-color: black;
+    height: 3rem;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 10px; }
+    .page-footer .flex-center a {
+      color: white;
+      text-decoration: none;
+      padding-left: 10px;
+      font-size: 17px; }
+  .page-footer .footer-copyright a {
+    color: #ffffff;
+    text-decoration: none; }

@@ -1,0 +1,17 @@
+.navbar {
+  background-color: #0b7c72 !important; }
+  .navbar img {
+    width: 63px;
+    height: 3rem;
+    margin-left: 15px;
+    border-radius: 11px; }
+  .navbar .navbar-brand {
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+    padding-left: 13px; }
+
+.links-right {
+  justify-content: end; }
+  .links-right li a {
+    color: white; }

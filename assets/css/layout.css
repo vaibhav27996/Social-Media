@@ -1,0 +1,37 @@
+body {
+  margin: 0; }
+  body #layout-main {
+    height: 100%; }
+    body #layout-main .box {
+      width: 40%;
+      background-color: #979494a1;
+      height: auto;
+      margin: 13px; }
+      body #layout-main .box .box-header {
+        background-color: #195285;
+        color: white;
+        padding: 10px; }
+      body #layout-main .box .box-body {
+        padding: 11px; }
+        body #layout-main .box .box-body input {
+          margin-left: auto;
+          margin-top: 0.8rem;
+          margin-right: auto;
+          width: 80%; }
+        body #layout-main .box .box-body button {
+          width: 40%;
+          margin-left: 9rem;
+          margin-top: 1rem;
+          border-radius: 30px;
+          padding: 10px; }
+    body #layout-main .card .card-header {
+      background-color: #835063;
+      color: white; }
+    body #layout-main .card .card-body {
+      height: auto; }
+      body #layout-main .card .card-body button {
+        float: right;
+        margin-top: 11px; }
+    body #layout-main table {
+      width: 70%;
+      margin-left: 32px; }

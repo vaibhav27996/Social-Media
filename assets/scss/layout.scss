@@ -1,4 +1,64 @@
 body{
     margin: 0;
-    /* text-align: center; */
+   
+    #layout-main{
+        height:100%;
+
+        .box{
+            width: 40%;
+            background-color: #979494a1;
+            height: auto;
+            margin: 13px;
+
+            .box-header{
+                background-color: #195285;
+                color: white;
+                padding: 10px;
+            }
+            
+            .box-body{
+                padding: 11px;
+
+                input{
+                    margin-left: auto;
+                    margin-top: 0.8rem;
+                    margin-right: auto;
+                    width: 80%;
+                }
+
+                button{
+                    width: 40%;
+                    margin-left: 9rem;
+                    margin-top: 1rem;
+                    border-radius: 30px;
+                    padding: 10px;
+                }
+            }
+        }
+
+        .card{
+           
+            
+            .card-header{
+                background-color: #835063;
+                color: white;
+            }
+
+            .card-body{
+                height: auto;
+                button{
+                    float: right;
+                    margin-top: 11px;
+                }
+                
+            }
+        }
+
+        table{
+            width: 70%;
+            margin-left: 32px;
+        }
+
+
+    }
 }

@@ -1,7 +1,16 @@
-        <link rel="stylesheet" href="/css/user_profile.css">
-        <h1>
-            Codeial / Profile Page
-        </h1>
+<link rel="stylesheet" href="/css/user_profile.css">
 
-        <p><%= user.name %></p>
-        <p><%= user.email %></p>
+
+<div class="card">
+    <div class="card-header">
+        <h4>Profile</h4>
+    </div>
+
+    <div class="card-body">
+        <p>User Name - <span><%= user.name %></span></p>
+        <p>User Email- <span><%= user.email %></span></p>
+    </div>
+
+</div>
+
+
