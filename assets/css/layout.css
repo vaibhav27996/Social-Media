@@ -33,5 +33,35 @@ body {
         float: right;
         margin-top: 11px; }
     body #layout-main table {
-      width: 70%;
-      margin-left: 32px; }
+      width: 100%; }
+      body #layout-main table i {
+        color: red;
+        float: right; }
+      body #layout-main table li {
+        padding: 7px; }
+        body #layout-main table li #cross-sign {
+          float: right;
+          padding-right: 9px;
+          color: red;
+          font-weight: 700; }
+    body #layout-main .friend-list {
+      margin-top: 3px;
+      border: 1px solid lightgrey; }
+      body #layout-main .friend-list h5 {
+        background-color: #835063;
+        color: white;
+        height: 3rem;
+        padding: 10px; }
+      body #layout-main .friend-list td {
+        padding: 10px; }
+        body #layout-main .friend-list td a {
+          color: blue;
+          text-decoration: none;
+          font-size: 15px;
+          font-weight: 400; }
+          body #layout-main .friend-list td a i {
+            float: left;
+            padding: 3px;
+            color: #403f70; }
+        body #layout-main .friend-list td a:hover {
+          color: cd2121; }

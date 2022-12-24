@@ -3,12 +3,28 @@
 
 <div class="card">
     <div class="card-header">
-        <h4>Profile</h4>
+        <% if(user.id ==user_info.id) { %>
+        <h4>Edit Profile</h4>
+
+        <% } else { %>
+            <h4>Profile</h4>
+        <% }  %>
     </div>
 
     <div class="card-body">
-        <p>User Name - <span><%= user.name %></span></p>
-        <p>User Email- <span><%= user.email %></span></p>
+
+        <% if(user.id ==user_info.id) { %>
+           <form action="/users/update/<%= user_info.id%>" method="post">
+            <p>User Name - <input type="text" name="name" placeholder="Enter name" class="form-control" value="<%= user_info.name %>" required></p> 
+            <p>User Email-    <input type="email" name="email" placeholder="Enter email" class="form-control" value="<%= user_info.email %>" required></p>
+            <button type="submit"class="btn btn-sm btn-success">Update</button>
+           </form> 
+    
+        <% } else { %>
+            <p>User Name - <span><%= user_info.name %></span></p>
+            <p>User Email- <span><%= user_info.email %></span></p>
+        <% }  %>
+        
     </div>
 
 </div>

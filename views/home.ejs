@@ -1,56 +1,35 @@
+
 <div class="container">
-
-    <h3>
-        <%= title %>
-     </h3>
-
-     <div class="row">
+    <div class="row mt-3">
 
         <% if(locals.user) { %>
-        <div class="col-12 col-sm-5 col-md-5 col-lg-5">
-            <div class="card">
-     
-                <div class="card-header">
-                    <h4>Posts</h4>
-                </div>
-            
-                <div class="card-body">
-                    <section id="feed-posts">
-                
-                        <form action="/posts/create" id="new-post-form" method="post">
-                            <textarea name="content" cols="30" rows="3" placeholder="Enter post" class="form-control"></textarea>
-                            <button type="submit" class="btn btn-md btn-success">Post</button>
-                        </form>
-                    
-                    </section>
-                </div>
-            
-            </div>
+        <div class="col-12 col-sm-8 col-md-8 col-lg-8">
+            <%- include('_post'); -%>
         </div>
         <% } %>
         
-        <div class="col-12 col-sm-7 col-md-7 col-lg-7">
-            <table class="table table-dark table-striped table-hover table-bordered">
-                <tr>
-                    <th>Sr No.</th>
-                    <th>Posts</th>
-                    <th>User</th>
-                </tr>
+        <div class="col-12 col-sm-4 col-md-4 col-lg-4">
+            <div class=" friend-list">
+                <h5>Friend</h5>
+                <table>
+                    <% for (u of user_list){ %>
+                        <tr>
+                            <td><a href="/users/profile/<%=u.id %>"><i class="fa-solid fa-user"></i>&nbsp;<%= u.name %></a></td> 
+                        </tr>
 
-                <% var count=1; %>
-                <% for(let i of posts) { %>
-
-                    <tr>
-                        <td><%= count %></td>
-                        <td><%= i.content %></td>
-                        <td><%= i.user.name %></td>
-                    </tr>
-                <% count++;
-                    } %>  
-            </table>
+                    <% } %>
+                </table>
+            </div>
         </div>
 
      </div>
+
+     <div class="row mt-4">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+           <!--The set the table has a post list and individual comment list also-->
+           <%- include('_comment'); -%>
+        </div>
+    </div>
      
 
 

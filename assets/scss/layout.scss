@@ -55,10 +55,61 @@ body{
         }
 
         table{
-            width: 70%;
-            margin-left: 32px;
-        }
+            width: 100%;
+          
 
+            i{
+                color: red;
+                float: right;
+            }
+
+            li{
+                padding: 7px;
+
+                #cross-sign{
+                    float: right;
+                    padding-right: 9px;
+                    color: red;
+                    font-weight: 700;
+                }
+            }
+
+         }
+         
+
+         .friend-list{
+            margin-top: 3px;
+            border: 1px solid lightgrey;
+
+            h5{
+                background-color: #835063;
+                color: white;
+                height: 3rem;
+                padding: 10px;
+            }
+
+            td{
+                padding: 10px;
+
+                a{
+                    color: blue;
+                    text-decoration: none;
+                    font-size: 15px;
+                    font-weight: 400;
+    
+                    i{
+                        float: left;
+                        padding: 3px;
+                        color: #403f70;
+                    }
+                }
+    
+                a:hover{
+                    color: cd2121;
+                }
+            }
+            
+         }
 
     }
 }

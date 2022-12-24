@@ -1,0 +1,58 @@
+<table class="table table-dark table-striped table-hover table-bordered">
+    <tr>
+        <th>Sr No.</th>
+        <th>Posts</th>
+        <th>User</th>
+        <% if(locals.user) { %>
+        <th>Comments</th>
+        <% } %>
+    </tr>
+
+    <% var count=1; %>
+    <% for(let i of posts) { %>
+
+        <tr>
+            <td>
+                <%= count %>
+            </td>
+            <td>
+                <%= i.content %>
+                  <% if(locals.user && locals.user.id==i.user.id) { %>
+                        <a href="/posts/destroy/<%= i.id %>"><i class="fa-solid fa-trash"></i></a>
+                   <% } %>     
+            </td>
+            <td><%= i.user.name %></td>
+            <% if(locals.user) { %>
+                <td>
+                
+                    <form action="/comments/create" method="POST">
+                        <table class="comment-form-table">
+                            <tr>
+                                <td> 
+                                    
+                                    <input type="text" name="content" class="form-control" placeholder="Type Here to add comment...">
+                                    <input type="hidden" name="post" value="<%= i._id %>" >
+                                
+                                </td>
+                                <td><button type="submit" class="btn btn-sm btn-primary">Comments</button></td>
+                            </tr>
+                        </table>
+
+                        <ul class="post-comment-<%=i._id %>">
+                            <% for(let commentsList of i.comment) { %>
+                                <li><%=commentsList.content %> 
+                                    <% if(locals.user && locals.user.id==i.user.id){ %>
+                                        <a href="/comments/destroy/<%= commentsList.id %>"><span id="cross-sign">X</span></a>
+                                    <% } %>
+                                </li>
+                            <% } %>    
+                        </ul>
+                    
+                        
+                    </form>
+                </td>
+            <% } %>    
+        </tr>
+    <% count++;
+        } %>  
+</table>
