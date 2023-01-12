@@ -6,9 +6,14 @@
 
     <div class="box-body">
         <form action="/users/create-session" method="POST">
+            <center>
             <input type="email" name="email" placeholder="Email" class="form-control" required>
             <input type="password" name="password" placeholder="Password"  class="form-control" required>
-            <button type="submit" class="btn btn-sn btn-success">Sign In</button>
+            <button type="submit" class="btn btn-sn btn-success">Sign In</button><br><br>
+            <a href="/users/send-otp">Reset/ Forgot Password</a>
+            <hr class="hr-style">
+            <button type="submit" class="btn btn-sn btn-primary"><a href="/users/auth/google">Google Sign In/Sign Up</a></button>
+        </center>
         
         </form>
     </div>

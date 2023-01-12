@@ -3,7 +3,7 @@
 
 <div class="card">
     <div class="card-header">
-        <% if(user.id ==user_info.id) { %>
+        <% if(user.id ==profile_user.id) { %>
         <h4>Edit Profile</h4>
 
         <% } else { %>
@@ -13,20 +13,96 @@
 
     <div class="card-body">
 
-        <% if(user.id ==user_info.id) { %>
-           <form action="/users/update/<%= user_info.id%>" method="post">
-            <p>User Name - <input type="text" name="name" placeholder="Enter name" class="form-control" value="<%= user_info.name %>" required></p> 
-            <p>User Email-    <input type="email" name="email" placeholder="Enter email" class="form-control" value="<%= user_info.email %>" required></p>
+        <% if(user.id ==profile_user.id) { %>
+           <form action="/users/update/<%= profile_user.id%>" enctype="multipart/form-data" method="post">
+            <img src="<%= profile_user.avatar%>" width="100" alt="avatar-image" style="margin-left: 8rem;;" >
+
+            <p>User Name - <input type="text" name="name" placeholder="Enter name" class="form-control" value="<%= profile_user.name %>" required></p> 
+            <p>User Email-    <input type="email" name="email" placeholder="Enter email" class="form-control" value="<%= profile_user.email %>" required></p>
+            <p>Upload Profile pic-</p><input type="file" name="avatar" placeholder="Add profile picture"  onchange="loadFile(event)" id="file-select">
+            <p id="show-label">Image Preview<br><img id="output"/ width="100" height="100"></p>
             <button type="submit"class="btn btn-sm btn-success">Update</button>
            </form> 
     
         <% } else { %>
-            <p>User Name - <span><%= user_info.name %></span></p>
-            <p>User Email- <span><%= user_info.email %></span></p>
+            <p>User Name -  
+                <span><%= profile_user.name %></span>
+                <% if(friendship){ %>
+                    <span><button class="btn btn-sm btn-danger remove-friend-btn" id="myBtn" ><a id="remove-friendShip" href="/users/remove-friendship/<%= friendship.id%>"><p class="add-remove">Remove</p></a></button></span>
+                <% }else{ %>
+                    <span><button class="btn btn-sm btn-info add-friend-btn" id="myBtn"><a id="add-friendShip" href="/users/add-friendship/<%= profile_user.id%>"><p class="add-remove">Add</p></a></button></span>
+                <% } %>
+                
+            </p>
+            <p>User Email- <span><%= profile_user.email %></span></p>
         <% }  %>
         
     </div>
 
 </div>
 
+<script>
 
+{
+
+$('#add-friendShip').click(function(e){
+    e.preventDefault();
+    
+    $.ajax({
+        type:'get',
+        url:$('#add-friendShip').attr('href'),
+        success:function(data){
+
+            $('.add-remove').html('Remove');
+            $('#myBtn').removeClass('btn-info"');
+            $('#myBtn').addClass("btn-danger");
+         
+            new Noty({
+                theme: 'relax',
+                text: "Added Friendship to you Suceessfuly!",
+                type: 'success',
+                layout: 'topRight',
+                timeout: 1500
+                
+            }).show();
+        },error:function(error){
+            console.log(error.responseText);
+        }
+    })
+})
+
+$('#remove-friendShip').click(function(e){
+    e.preventDefault();
+    
+    $.ajax({
+        type:'get',
+        url:$('#remove-friendShip').attr('href'),
+        success:function(data){
+            $('.add-remove').html('Add');
+            $('#myBtn').removeClass('btn-danger');
+            $('#myBtn').addClass('btn-info');
+
+            new Noty({
+                theme: 'relax',
+                text: "Remove Friendship to you Suceessfuly!",
+                type: 'success',
+                layout: 'topRight',
+                timeout: 1500
+                
+            }).show();
+        },error:function(error){
+            console.log(error.responseText);
+        }
+    })
+})
+
+}
+var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+
+</script>

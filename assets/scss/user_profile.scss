@@ -23,6 +23,22 @@
         span{
             font-size: 15px;
             color: brown;
+
+            .add-friend-btn{
+                margin: 0px !important;
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+
+            .remove-friend-btn{
+                margin: 0px !important;
+                a{
+                    color: white;
+                    text-decoration: none;
+                }
+            }
         }
     }
 }
