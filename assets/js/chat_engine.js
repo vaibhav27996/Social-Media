@@ -9,7 +9,6 @@ class ChatEngine{
         if (this.userEmail){
             this.connectionHandler();
         }
-
     }
 
 
